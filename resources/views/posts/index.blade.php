@@ -16,7 +16,7 @@
                 
             </div>
         @endforeach
-        {{{--  'pagination'  --}}}
+       
         {{$posts->links()}}
     @else
         <p>Nessun Post </p>

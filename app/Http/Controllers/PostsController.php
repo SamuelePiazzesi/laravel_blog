@@ -21,7 +21,7 @@ class PostsController extends Controller
         // $posts = Post::orderBy('created_at', 'desc')->take(1)->get();
         //POSSO ADDIRITURA FARE LA PAGINATION QUI CON PAGINATE(n°di rows che voglio)
 
-       $posts = Post::orderBy('created_at', 'desc')->paginate(10)->get();
+       $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
         return view('posts.index')->with('posts', $posts);
     }
