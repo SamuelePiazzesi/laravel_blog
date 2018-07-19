@@ -10,9 +10,12 @@
       
     </head>
     <body>
-        @include('inc.navbar')
-        <div class="container">
-                @yield('content');
-        </div>
+            @include('inc.navbar')
+        <div class="container-fluid">
+                <div class="m-5 p-4">
+                        @yield('content');
+                    
+                </div>
+        </div>    
     </body>
 </html>
