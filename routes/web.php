@@ -11,16 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* esempio di utilizzo delle query params per far ritornare pagine dinamiche
+ Route::get('/users/{id}/{name}', function ($id, $name) {
+     return 'this is user '.$name.' with an id '.$id;});
+*/
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/services', 'PagesController@services');
 
-// esempio di utilizzo delle query params per far ritornare pagine dinamice
-
-Route::get('/users/{id}/{name}', function ($id, $name) {
-    return 'this is user '.$name.' with an id '.$id;
-});
-
-Route::get('/about', function () {
-    return view('pages.about');
-});
+Route::resource('posts', 'PostsController');
