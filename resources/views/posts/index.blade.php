@@ -11,7 +11,7 @@
                                 {{$post->title}}
                             </a>
                         </h3>
-                    <small>Data creazione; {{$post->created_at}}</small>
+                    <small>Data creazione: {{$post->created_at}}  Scritto da {{$post->user['name']}}</small>
                 </div>
                 
             </div>

@@ -12,6 +12,6 @@
             {{Form::textarea('body', $post->body, ['id'=> 'article-ckeditor', 'class' => 'form-control', 'placeholder'=> ''])}}
         </div>
         {{Form::hidden('_method', 'PUT')}}
-        {{Form::submit('Crea il Post', ['class'=> 'btn btn-outline-dark'])}}
+        {{Form::submit('Conferma', ['class'=> 'btn btn-outline-dark'])}}
 {!! Form::close() !!}
 @endsection

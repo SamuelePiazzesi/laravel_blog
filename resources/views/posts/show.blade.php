@@ -8,11 +8,13 @@
         {!!$post->body!!}
     </div>
     <hr>
-    <small>Data: {{$post->created_at}}</small>
+    <small>Data: {{$post->created_at}} Scritto da {{$post->user['name']}}</small>
     <hr>
+    @if(!Auth::guest() && Auth::user()->id === $post->user_id)
     <a href="/posts/{{$post->id}}/edit" class="btn btn-outline-dark">MODIFICA</a>
     {!!Form::open(['action'=> ['PostsController@destroy', $post->id], 'method'=> 'POST', 'class' => 'float-right'])!!}
     {{Form::hidden('_method', 'DELETE')}}
     {{Form::submit('CANCELLA', ['class'=> 'btn btn-outline-danger'])}}
     {!!Form::close()!!}
+    @endif
 @endsection
