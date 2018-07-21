@@ -77,6 +77,8 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+
+       
         return view('posts.show')->with('post', $post);
     }
 
@@ -89,6 +91,12 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+         /*
+        * Controllo l'id del post e dell'autore
+        */
+        if(auth()->user()->id !== $post->user_id) {
+            return redirect('/posts')->with('error', 'Non sei autorizzato a modificare il Post!');
+        }
         return view('posts.edit')->with('post', $post);
     }
 
@@ -119,6 +127,14 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+
+          /*
+        * Controllo l'id del post e dell'autore
+        */
+        if(auth()->user()->id !== $post->user_id) {
+            return redirect('/posts')->with('error', 'Non sei autorizzato a cancellare il Post!');
+        }
+
         $post->delete();
 
         return redirect('/posts')->with('success', 'Post cancellato!');

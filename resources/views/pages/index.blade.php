@@ -2,12 +2,8 @@
 
 @section('content')
     <div class="jumbotron text-center">
-        <h1>Il mio blog</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, tenetur.</p>
-        <p>
-            <a href="/login" class="btn btn-primary btn-lg" role="button">Login</a>
-            <a href="/register" class="btn btn-success btn-lg" role="button">Registrati</a>
-        </p>
+        <h1 class="display-3">Laravel Blog</h1>
+       <p>Ma che bomba è Laravel? Pazzesco Dio maiale</p>
     </div>
 @endsection
 
